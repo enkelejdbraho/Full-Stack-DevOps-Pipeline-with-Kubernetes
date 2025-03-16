@@ -1,20 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: node-app-deployment
+  name: node-app-deployment-2
   namespace: node-app
 spec:
   replicas: 1 # Adjust the number of replicas as needed
   selector:
     matchLabels:
-      app: node-app
+      app: node-app-2
   template:
     metadata:
       labels:
-        app: node-app
+        app: node-app-2
     spec:
       containers:
-        - name: node-app
+        - name: node-app-1
           image: enkelejd/node-app:v1 # Use the provided Docker image
           ports:
-            - containerPort: 3000 # Make sure this is the correct port your app listens on
+            - containerPort: 4000 # Make sure this is the correct port your app listens on
+          env:
+            - name: PORT
+              value: "4000"
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+            requests:
+              memory: "256Mi"
+              cpu: "250m"

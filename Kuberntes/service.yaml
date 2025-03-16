@@ -8,6 +8,6 @@ spec:
     app: node-app
   ports:
     - protocol: TCP
-      port: 80 # The port exposed by the service
+      port: 3000 # The port exposed by the service
       targetPort: 3000 # The port the app is running on inside the container
-  type: NodePort # You can use LoadBalancer or ClusterIP depending on your use case
+  type: ClusterIP # You can use LoadBalancer or ClusterIP depending on your use case
