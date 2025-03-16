@@ -14,7 +14,7 @@ spec:
         app: node-app-2
     spec:
       containers:
-        - name: node-app-1
+        - name: node-app-2
           image: enkelejd/node-app:v1 # Use the provided Docker image
           ports:
             - containerPort: 4000 # Make sure this is the correct port your app listens on
